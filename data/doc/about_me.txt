@@ -1,0 +1,30 @@
+Name: Anupam Dhiman
+Father name: Mr. Kushal pal
+Mother name: Mrs. Rekha
+
+
+Education:
+B.Tech in Computer Science & Engineering (2022–2025)
+Dev Bhoomi Group of Institutions, Saharanpur
+CGPA: 7.3
+
+Diploma in Electrical Engineering (2018–2021)
+Dreams College of Polytechnic, Saharanpur
+
+Skills:
+C, C++, C#, Python,
+HTML, CSS, JavaScript, Git, GitHub, Power BI, N8N
+
+Projects:
+Web Based Quiz Application
+Tic Tac Toe Game
+Gemini AI Chatbot
+RAG Based AI Agent
+
+Experience:
+Web Development Intern at Zoxima Solutions Pvt. Ltd.
+Diploma Trainee at Navaitasys (TDK Group)
+AI Developer Intern at Bayridge
+
+Career Goal:
+To become a skilled software developer focused on backend and AI-based systems.
