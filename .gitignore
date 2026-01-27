@@ -1,3 +1,7 @@
 .env
 __pycache__/
 venv/
+# RAG vector database
+vector_store/
+*.faiss
+*.pkl
