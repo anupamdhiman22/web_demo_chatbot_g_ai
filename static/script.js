@@ -25,23 +25,32 @@
 
 
 
+// 
+
+
+let chatCount = 1;
+
 function sendMessage() {
     let input = document.getElementById("userInput");
     let message = input.value.trim();
-
     if (message === "") return;
 
     let chat = document.getElementById("messages");
+    let history = document.getElementById("historyList");
 
+    // Show user message
     chat.innerHTML += `<div class="message user">${message}</div>`;
     chat.scrollTop = chat.scrollHeight;
 
+    // Add to history
+    let item = document.createElement("li");
+    item.innerText = "Chat " + chatCount++;
+    history.appendChild(item);
+
     fetch("/chat", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ message: message })
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message })
     })
     .then(res => res.json())
     .then(data => {
@@ -54,7 +63,5 @@ function sendMessage() {
 
 // Enter key support
 document.getElementById("userInput").addEventListener("keypress", function(e) {
-    if (e.key === "Enter") {
-        sendMessage();
-    }
+    if (e.key === "Enter") sendMessage();
 });
