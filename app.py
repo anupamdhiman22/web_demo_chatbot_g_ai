@@ -2,6 +2,12 @@ from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
 import os
 from google import genai
+import google.generativeai as genai
+import os
+
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
+
+
 
 from rag.loader import load_documents
 from rag.retriever import retrieve_context
