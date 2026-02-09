@@ -3,17 +3,15 @@ from dotenv import load_dotenv
 from google import genai
 import os
 
-genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
-
-
-
 from rag.loader import load_documents
 from rag.retriever import retrieve_context
 
+# Load environment variables first
 load_dotenv()
 
 API_KEY = os.getenv("GEMINI_API_KEY")
 
+# Initialize Gemini client (NEW SDK)
 client = genai.Client(api_key=API_KEY)
 
 app = Flask(__name__)
@@ -42,11 +40,11 @@ Question:
 """
 
     response = client.models.generate_content(
-        model="models/gemini-2.5-flash",
+        model="gemini-1.5-flash",
         contents=prompt
     )
 
     return jsonify({"reply": response.text})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
